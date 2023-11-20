@@ -1,3 +1,7 @@
+The sample workflow to submit Apache Spark job on HDinsight on AKS:
+
+<img src="workflow.png">
+
 The input payload to trigger the workflow:
 
 ```
