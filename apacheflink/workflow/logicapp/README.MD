@@ -1,3 +1,8 @@
+## Orchestrate Apache Flink Job on HDInsight on AKS Using Azure Logic App
+
+The sample workflow to submit Apache Flink job on HDinsight on AKS:
+
+<img src="flink_workflow.png/>
 
 
 The input payload to trigger the workflow schema will be as following:
