@@ -9,7 +9,7 @@ The input payload to trigger the workflow schema will be as following:
 {
     "type": "object",
     "properties": {
-        "cluster_dns_name": {
+        "cluster_fqdn_name": {
             "type": "string"
         },
        "tenantId": {
@@ -26,7 +26,7 @@ The sample payload is as following:
 
 ```
 {
-  "cluster_dns_name":"<<cluster dns>>.hdinsightaks.net",
+  "cluster_fqdn_name":"<<cluster dns>>.hdinsightaks.net",
   "tenantId":"<<tenantId>>",
   "spark_submit_payload":{
 	"className": "org.apache.spark.examples.SparkPi",
