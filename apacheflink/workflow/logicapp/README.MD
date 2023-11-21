@@ -24,6 +24,9 @@ The input payload to trigger the workflow schema will be as following:
         },
         "subscriptionId": {
             "type": "string"
+        },
+        "tenantId": {
+            "type": "string"
         }
     },
     "type": "object"
@@ -33,6 +36,7 @@ The input payload to trigger the workflow schema will be as following:
 The sample payload is as following:
 ```
 {
+  "tenantId":"<<tenantId>>",
   "subscriptionId": "<<subscriptionid>>",
   "cluster_resource_group": "<<resource group>>",
   "hdinsight_pool_name": "<<hdinsight pool name>>",
