@@ -2,8 +2,7 @@
 
 The sample workflow to submit Apache Flink job on HDinsight on AKS:
 
-<img src="flink_workflow.png/>
-
+<img src="flink_workflow.png>
 
 The input payload to trigger the workflow schema will be as following:
 
