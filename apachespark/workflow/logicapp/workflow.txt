@@ -9,7 +9,7 @@
                         "Authorization": "Bearer @{body('ParseOAuthTokenResponse')?['access_token']}"
                     },
                     "method": "POST",
-                    "uri": "https://@{body('Parse_Trigger_Request_Body')?['cluster_dns_name']}/p/livy/batches"
+                    "uri": "https://@{body('Parse_Trigger_Request_Body')?['cluster_fqdn_name']}/p/livy/batches"
                 },
                 "runAfter": {
                     "ParseOAuthTokenResponse": [
@@ -26,7 +26,7 @@
                         }
                     },
                     "method": "get",
-                    "path": "/secrets/@{encodeURIComponent('variables-api-client-id')}/value"
+                    "path": "/secrets/@{encodeURIComponent('hilo-variables-api-client-id')}/value"
                 },
                 "runAfter": {
                     "Parse_Trigger_Request_Body": [
@@ -43,7 +43,7 @@
                         }
                     },
                     "method": "get",
-                    "path": "/secrets/@{encodeURIComponent('variables-api-secret')}/value"
+                    "path": "/secrets/@{encodeURIComponent('hilo-variables-api-secret')}/value"
                 },
                 "runAfter": {
                     "KeyVault-GetClientID": [
@@ -76,7 +76,7 @@
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     "method": "POST",
-                    "uri": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/oauth2/v2.0/token"
+                    "uri": "https://login.microsoftonline.com/@{body('Parse_Trigger_Request_Body')?['tenantId']}/oauth2/v2.0/token"
                 },
                 "runAfter": {
                     "OAuth-Request_Query": [
@@ -118,12 +118,15 @@
                     "content": "@triggerBody()",
                     "schema": {
                         "properties": {
-                            "cluster_dns_name": {
+                            "cluster_fqdn_name": {
                                 "type": "string"
                             },
                             "spark_submit_payload": {
                                 "properties": {},
                                 "type": "object"
+                            },
+                            "tenantId": {
+                                "type": "string"
                             }
                         },
                         "type": "object"
@@ -171,6 +174,9 @@
         "outputs": {},
         "triggers": {
             "Trigger_-_When_a_HTTP_request_is_received": {
+                "inputs": {
+                    "method": "POST"
+                },
                 "kind": "Http",
                 "type": "Request"
             }
