@@ -12,7 +12,7 @@ The input payload to trigger the workflow schema will be as following:
         },
        "tenantId": {
             "type": "string"
-        }
+        },
         "spark_submit_payload": {
             "type": "object",
             "properties": {}
