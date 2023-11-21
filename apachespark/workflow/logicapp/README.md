@@ -2,7 +2,22 @@ The sample workflow to submit Apache Spark job on HDinsight on AKS:
 
 <img src="workflow.png">
 
-The input payload to trigger the workflow:
+The input payload to trigger the workflow schema will be as following:
+```
+{
+    "type": "object",
+    "properties": {
+        "cluster_dns_name": {
+            "type": "string"
+        },
+        "spark_submit_payload": {
+            "type": "object",
+            "properties": {}
+        }
+    }
+}
+```
+The sample payload is as following:
 
 ```
 {
