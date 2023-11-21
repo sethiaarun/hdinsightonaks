@@ -174,9 +174,6 @@
         "outputs": {},
         "triggers": {
             "Trigger_-_When_a_HTTP_request_is_received": {
-                "inputs": {
-                    "method": "POST"
-                },
                 "kind": "Http",
                 "type": "Request"
             }
